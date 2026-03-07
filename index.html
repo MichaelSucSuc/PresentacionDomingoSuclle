@@ -1,0 +1,854 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Domingo Suclle Aragón | Alcaldía A.S.A. 2026</title>
+  <meta name="description" content="Campaña 2026 de Domingo Suclle Aragón a la Alcaldía de Alto Selva Alegre, Arequipa. Unidad para Servir.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+3:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --asa-red: #c1121f;
+      --asa-red-dark: #8b0d17;
+      --asa-white: #fffdf7;
+      --asa-ink: #151515;
+      --asa-slate: #2f3b45;
+      --asa-gold: #f4a300;
+      --asa-sky: #d7ecf7;
+      --asa-olive: #5f7c4d;
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --shadow-soft: 0 14px 38px rgba(15, 18, 21, 0.18);
+      --shadow-card: 0 10px 26px rgba(15, 18, 21, 0.12);
+      --max-width: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Source Sans 3", sans-serif;
+      color: var(--asa-ink);
+      background:
+        radial-gradient(circle at 8% 10%, rgba(244, 163, 0, 0.22), transparent 22%),
+        radial-gradient(circle at 90% 22%, rgba(193, 18, 31, 0.18), transparent 24%),
+        linear-gradient(140deg, #fffef9 0%, #f8fafc 56%, #eef6fb 100%);
+      line-height: 1.55;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    img,
+    video {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(92vw, var(--max-width));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+      background: rgba(255, 253, 247, 0.9);
+      border-bottom: 1px solid rgba(21, 21, 21, 0.08);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.75rem 0;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+
+    .brand strong {
+      font-size: 1.1rem;
+      letter-spacing: 0.03em;
+    }
+
+    .brand span {
+      font-size: 0.82rem;
+      color: var(--asa-slate);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-top: 0.2rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-links a {
+      padding: 0.4rem 0.6rem;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: background-color 0.25s ease, transform 0.25s ease;
+    }
+
+    .nav-links a:hover {
+      background: rgba(193, 18, 31, 0.12);
+      transform: translateY(-2px);
+    }
+
+    .hero {
+      position: relative;
+      min-height: 86vh;
+      display: grid;
+      align-items: center;
+      isolation: isolate;
+      margin-bottom: 3.8rem;
+    }
+
+    .hero-media {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      overflow: hidden;
+    }
+
+    .hero-media video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(1.05) contrast(1.02);
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background:
+        linear-gradient(110deg, rgba(12, 12, 12, 0.76) 0%, rgba(12, 12, 12, 0.58) 42%, rgba(12, 12, 12, 0.42) 100%),
+        repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.04) 0 10px, transparent 10px 20px);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 2rem;
+      align-items: center;
+      padding: 5.5rem 0 4.8rem;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(244, 163, 0, 0.95);
+      color: #161616;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.45rem 0.75rem;
+      border-radius: 999px;
+      margin-bottom: 1rem;
+      font-size: 0.78rem;
+    }
+
+    .hero h1 {
+      font-family: "Bebas Neue", sans-serif;
+      color: white;
+      font-size: clamp(2.9rem, 8.5vw, 6rem);
+      line-height: 0.94;
+      letter-spacing: 0.03em;
+      text-wrap: balance;
+    }
+
+    .hero h1 small {
+      display: block;
+      color: #ffd8dc;
+      font-size: clamp(1.5rem, 3.8vw, 2.4rem);
+      margin-top: 0.45rem;
+      letter-spacing: 0.08em;
+    }
+
+    .hero p {
+      max-width: 56ch;
+      color: rgba(255, 255, 255, 0.94);
+      font-size: clamp(1.04rem, 2.1vw, 1.25rem);
+      margin-top: 1rem;
+      text-wrap: pretty;
+    }
+
+    .hero-actions {
+      margin-top: 1.7rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.78rem 1.2rem;
+      border-radius: 999px;
+      border: 2px solid transparent;
+      font-weight: 800;
+      font-size: 0.96rem;
+      letter-spacing: 0.03em;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+    }
+
+    .btn-primary {
+      background: var(--asa-red);
+      color: white;
+      box-shadow: 0 10px 24px rgba(193, 18, 31, 0.4);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.15);
+      color: white;
+      border-color: rgba(255, 255, 255, 0.55);
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .hero-card {
+      justify-self: end;
+      background: rgba(255, 255, 255, 0.97);
+      color: var(--asa-ink);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+      width: min(360px, 100%);
+      transform: rotate(-1.2deg);
+    }
+
+    .hero-card img {
+      aspect-ratio: 3 / 3.5;
+      object-fit: cover;
+    }
+
+    .hero-card-text {
+      padding: 1rem 1rem 1.1rem;
+      text-align: center;
+    }
+
+    .hero-card-text strong {
+      display: block;
+      font-size: 1.08rem;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-card-text span {
+      color: var(--asa-slate);
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    section {
+      margin-bottom: 4rem;
+    }
+
+    .section-head {
+      margin-bottom: 1.5rem;
+    }
+
+    .section-head .eyebrow {
+      display: inline-block;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 800;
+      color: var(--asa-red-dark);
+      margin-bottom: 0.35rem;
+    }
+
+    .section-head h2 {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: clamp(2rem, 5vw, 3.1rem);
+      letter-spacing: 0.04em;
+      line-height: 0.94;
+    }
+
+    .section-head p {
+      margin-top: 0.5rem;
+      color: #394652;
+      max-width: 72ch;
+    }
+
+    .bio-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.3rem;
+      align-items: start;
+    }
+
+    .panel {
+      background: rgba(255, 255, 255, 0.94);
+      border: 1px solid rgba(21, 21, 21, 0.08);
+      border-radius: var(--radius-lg);
+      padding: 1.2rem;
+      box-shadow: var(--shadow-card);
+    }
+
+    .quote {
+      background: linear-gradient(170deg, #fff6d8, #fffdf7 55%);
+      border-color: rgba(244, 163, 0, 0.38);
+    }
+
+    .quote p {
+      font-size: 1.05rem;
+      color: #313a44;
+    }
+
+    .quote footer {
+      margin-top: 1rem;
+      font-weight: 800;
+      color: var(--asa-red-dark);
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 1.4rem;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 0.35rem;
+      top: 0.2rem;
+      bottom: 0.2rem;
+      width: 3px;
+      border-radius: 2px;
+      background: linear-gradient(var(--asa-red), var(--asa-gold), var(--asa-olive));
+    }
+
+    .milestone {
+      position: relative;
+      padding-bottom: 1rem;
+      margin-bottom: 0.8rem;
+      border-bottom: 1px solid rgba(21, 21, 21, 0.08);
+    }
+
+    .milestone:last-child {
+      margin-bottom: 0;
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .milestone::before {
+      content: "";
+      position: absolute;
+      width: 13px;
+      height: 13px;
+      border-radius: 999px;
+      left: -1.23rem;
+      top: 0.2rem;
+      background: var(--asa-red);
+      border: 2px solid #fff;
+      box-shadow: 0 0 0 2px rgba(193, 18, 31, 0.2);
+    }
+
+    .milestone h3 {
+      font-size: 1.06rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .milestone p {
+      color: #3f4a54;
+      font-size: 0.95rem;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 0.9rem;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-card);
+      min-height: 180px;
+      isolation: isolate;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.45s ease;
+    }
+
+    .gallery-item::after {
+      content: attr(data-caption);
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.74), transparent);
+      color: white;
+      font-size: 0.84rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      padding: 1.5rem 0.8rem 0.7rem;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.06);
+    }
+
+    .gallery-item.featured {
+      grid-column: span 6;
+      min-height: 390px;
+    }
+
+    .gallery-item.wide {
+      grid-column: span 6;
+      min-height: 190px;
+    }
+
+    .gallery-item.standard {
+      grid-column: span 4;
+      min-height: 220px;
+    }
+
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .pillar {
+      background: white;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(21, 21, 21, 0.08);
+      box-shadow: var(--shadow-card);
+      padding: 1rem;
+      display: grid;
+      gap: 0.4rem;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .pillar:hover {
+      transform: translateY(-5px);
+      border-color: rgba(193, 18, 31, 0.35);
+    }
+
+    .pillar strong {
+      font-size: 1.03rem;
+    }
+
+    .pillar p {
+      color: #41505d;
+    }
+
+    .values-wrap {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.9rem;
+    }
+
+    .value {
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      text-align: center;
+      box-shadow: var(--shadow-card);
+      border: 1px solid rgba(21, 21, 21, 0.08);
+      background: white;
+    }
+
+    .value h3 {
+      font-family: "Bebas Neue", sans-serif;
+      letter-spacing: 0.07em;
+      font-size: 1.7rem;
+      line-height: 0.95;
+      margin-bottom: 0.35rem;
+      color: var(--asa-red-dark);
+    }
+
+    .cta {
+      background:
+        linear-gradient(130deg, rgba(193, 18, 31, 0.95), rgba(139, 13, 23, 0.95)),
+        radial-gradient(circle at 85% 10%, rgba(244, 163, 0, 0.3), transparent 45%);
+      color: white;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft);
+      padding: clamp(1.4rem, 4vw, 2.5rem);
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: clamp(2rem, 6vw, 3.5rem);
+      letter-spacing: 0.05em;
+      line-height: 0.92;
+      margin-bottom: 0.5rem;
+    }
+
+    .cta p {
+      max-width: 60ch;
+      margin: 0 auto 1rem;
+      font-size: 1.05rem;
+      color: rgba(255, 255, 255, 0.94);
+    }
+
+    .site-footer {
+      background: #111111;
+      color: #f8f9fb;
+      margin-top: 3rem;
+      padding: 1.6rem 0;
+      border-top: 3px solid var(--asa-gold);
+    }
+
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.8rem;
+      font-size: 0.95rem;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 1024px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card {
+        justify-self: start;
+        width: min(320px, 100%);
+      }
+
+      .pillars {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .values-wrap {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .bio-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-item.featured,
+      .gallery-item.wide {
+        grid-column: span 12;
+      }
+
+      .gallery-item.standard {
+        grid-column: span 6;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .nav {
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        justify-content: flex-start;
+      }
+
+      .hero {
+        min-height: 84vh;
+      }
+
+      .hero-grid {
+        padding-top: 4.2rem;
+      }
+
+      .pillars,
+      .values-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-item.standard {
+        grid-column: span 12;
+      }
+
+      .section-head h2 {
+        font-size: clamp(1.8rem, 12vw, 2.4rem);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#inicio" class="brand" aria-label="Ir al inicio">
+        <strong>Domingo Suclle Aragón</strong>
+        <span>Alcaldía A.S.A. 2026</span>
+      </a>
+      <nav class="nav-links" aria-label="Navegación principal">
+        <a href="#biografia">Biografía</a>
+        <a href="#galeria">Galería</a>
+        <a href="#propuestas">Propuestas</a>
+        <a href="#valores">Valores</a>
+        <a href="#sumate">Súmate</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio" aria-label="Presentación principal">
+      <div class="hero-media" aria-hidden="true">
+        <video autoplay muted loop playsinline preload="metadata">
+          <source src="video.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="reveal">
+          <div class="tag">Elecciones Municipales 2026 • Alto Selva Alegre</div>
+          <h1>
+            Domingo Suclle Aragón
+            <small>Alcaldía de A.S.A. - Arequipa</small>
+          </h1>
+          <p>
+            Una propuesta nacida en el barrio, construida con trabajo y guiada por una sola convicción:
+            <strong>"Unidad para Servir"</strong>.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#sumate">Quiero Apoyar</a>
+            <a class="btn btn-secondary" href="#propuestas">Conocer Propuestas</a>
+          </div>
+        </div>
+        <aside class="hero-card reveal" aria-label="Foto principal del candidato">
+          <img src="photo1.jpg" alt="Domingo Suclle Aragón en su oficina">
+          <div class="hero-card-text">
+            <strong>Domingo Suclle Aragón</strong>
+            <span>Candidato a la Alcaldía de Alto Selva Alegre</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="container" id="biografia">
+      <header class="section-head reveal">
+        <span class="eyebrow">Historia de Vida</span>
+        <h2>Una vida entera en Alto Selva Alegre</h2>
+        <p>
+          Nació y creció en Pampachica, Pueblo Joven Independencia. Desde pequeño aprendió que el esfuerzo,
+          la familia y el servicio son la base para transformar una comunidad.
+        </p>
+      </header>
+      <div class="bio-grid">
+        <article class="panel quote reveal">
+          <p>
+            "Crecí en Pampachica, pueblo joven de Alto Selva Alegre. Mi padre falleció joven, aprendí el valor
+            del trabajo desde muy niño. Estudié en el colegio Ludwig Van Beethoven, me dediqué a la construcción
+            civil, formé una familia, estudié arquitectura. Hoy me postulo a la alcaldía — Domingo Suclle,
+            unidad para servir."
+          </p>
+          <footer>Domingo Suclle Aragón</footer>
+        </article>
+        <article class="panel timeline reveal" aria-label="Línea de tiempo de vida y trayectoria">
+          <div class="milestone">
+            <h3>Infancia en Pampachica</h3>
+            <p>Cuarto de seis hermanos, vivió de cerca el esfuerzo diario de su familia tras la pérdida temprana de su padre.</p>
+          </div>
+          <div class="milestone">
+            <h3>Formación escolar</h3>
+            <p>Estudió primaria y secundaria en la I.E. Ludwig Van Beethoven N° 40029.</p>
+          </div>
+          <div class="milestone">
+            <h3>Trabajo y oficio</h3>
+            <p>Construyó su trayectoria en el rubro de la construcción civil y contrataciones.</p>
+          </div>
+          <div class="milestone">
+            <h3>Familia y superación</h3>
+            <p>Formó una familia mientras cursaba estudios universitarios de Arquitectura.</p>
+          </div>
+          <div class="milestone">
+            <h3>Experiencia técnica actual</h3>
+            <p>Hoy trabaja como Agente Inmobiliario y Verificador SUNARP.</p>
+          </div>
+          <div class="milestone">
+            <h3>Compromiso 2026</h3>
+            <p>Postula a la Alcaldía de Alto Selva Alegre para gobernar con unidad, transparencia y servicio.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="container" id="galeria">
+      <header class="section-head reveal">
+        <span class="eyebrow">Galería</span>
+        <h2>Momentos de su trayectoria</h2>
+        <p>Seis imágenes que muestran su camino: trabajo, formación, comunidad y compromiso con Alto Selva Alegre.</p>
+      </header>
+      <div class="gallery-grid">
+        <figure class="gallery-item featured reveal" data-caption="Foto principal en oficina">
+          <img src="photo1.jpg" alt="Domingo Suclle Aragón en su oficina, foto principal de campaña">
+        </figure>
+        <figure class="gallery-item wide reveal" data-caption="Construcción civil y planificación">
+          <img src="photo2.jpg" alt="Domingo Suclle en obra de construcción revisando planos">
+        </figure>
+        <figure class="gallery-item standard reveal" data-caption="Arquitectura en formación">
+          <img src="photo3.jpg" alt="Domingo Suclle con maqueta arquitectónica en la universidad">
+        </figure>
+        <figure class="gallery-item standard reveal" data-caption="Vida universitaria">
+          <img src="photo4.jpg" alt="Domingo Suclle con compañeros universitarios">
+        </figure>
+        <figure class="gallery-item standard reveal" data-caption="Raíces arequipeñas">
+          <img src="photo5.jpg" alt="Fotografía de juventud de Domingo Suclle en las montañas de Arequipa">
+        </figure>
+        <figure class="gallery-item wide reveal" data-caption="Trabajo con la comunidad">
+          <img src="photo6.jpg" alt="Domingo Suclle en reunión comunitaria y política">
+        </figure>
+      </div>
+    </section>
+
+    <section class="container" id="propuestas">
+      <header class="section-head reveal">
+        <span class="eyebrow">Plan de Gobierno</span>
+        <h2>6 pilares para transformar A.S.A.</h2>
+        <p>Propuestas concretas para un distrito más ordenado, seguro, productivo y con oportunidades para todos.</p>
+      </header>
+      <div class="pillars">
+        <article class="pillar reveal">
+          <strong>Infraestructura</strong>
+          <p>Mejoramiento de vías, escaleras, drenaje y espacios públicos con enfoque técnico y mantenimiento sostenible.</p>
+        </article>
+        <article class="pillar reveal">
+          <strong>Educación y Juventud</strong>
+          <p>Programas de formación, deporte y tecnología para potenciar habilidades y prevenir la violencia juvenil.</p>
+        </article>
+        <article class="pillar reveal">
+          <strong>Barrios</strong>
+          <p>Intervenciones por zonas con juntas vecinales, priorizando seguridad, limpieza y recuperación de áreas comunes.</p>
+        </article>
+        <article class="pillar reveal">
+          <strong>Economía Local</strong>
+          <p>Impulso al emprendimiento vecinal, mercados más ordenados y promoción de empleo en coordinación con el sector privado.</p>
+        </article>
+        <article class="pillar reveal">
+          <strong>Medio Ambiente</strong>
+          <p>Gestión responsable de residuos, arborización y educación ambiental para un distrito más saludable.</p>
+        </article>
+        <article class="pillar reveal">
+          <strong>Gobierno Transparente</strong>
+          <p>Municipio abierto, rendición de cuentas y participación ciudadana real en la toma de decisiones.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="container" id="valores">
+      <header class="section-head reveal">
+        <span class="eyebrow">Principios</span>
+        <h2>Valores que guían esta campaña</h2>
+      </header>
+      <div class="values-wrap">
+        <article class="value reveal">
+          <h3>Trabajo</h3>
+          <p>Disciplina y esfuerzo diario para cumplir resultados.</p>
+        </article>
+        <article class="value reveal">
+          <h3>Familia</h3>
+          <p>Protección y oportunidades para cada hogar del distrito.</p>
+        </article>
+        <article class="value reveal">
+          <h3>Servicio</h3>
+          <p>La función pública como vocación, no como privilegio.</p>
+        </article>
+        <article class="value reveal">
+          <h3>Unidad</h3>
+          <p>Gobernar con todos los vecinos, sin divisiones.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="container" id="sumate">
+      <div class="cta reveal">
+        <h2>Alto Selva Alegre Merece Más</h2>
+        <p>
+          Este 2026, caminemos juntos con una sola fuerza vecinal. Súmate a la campaña de
+          <strong>Domingo Suclle Aragón</strong> y construyamos una gestión con obras, honestidad y cercanía.
+        </p>
+        <a class="btn btn-secondary" href="#inicio">Unidad para Servir</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p><strong>Domingo Suclle Aragón</strong> • Candidato a la Alcaldía de Alto Selva Alegre (A.S.A.)</p>
+      <p>Arequipa, Perú • Elecciones Municipales 2026</p>
+    </div>
+  </footer>
+
+  <script>
+    const revealItems = document.querySelectorAll('.reveal');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.16,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    revealItems.forEach((item, index) => {
+      item.style.transitionDelay = `${Math.min(index * 40, 280)}ms`;
+      observer.observe(item);
+    });
+  </script>
+</body>
+</html>
