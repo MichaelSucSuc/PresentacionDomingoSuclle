@@ -581,6 +581,21 @@
       color: var(--asa-red-dark);
     }
 
+    .video-wrap {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      background: #000;
+      line-height: 0;
+    }
+
+    .video-wrap video {
+      width: 100%;
+      max-height: 560px;
+      object-fit: contain;
+      display: block;
+    }
+
     .cta {
       background:
         linear-gradient(130deg, rgba(193, 18, 31, 0.95), rgba(139, 13, 23, 0.95)),
@@ -780,6 +795,7 @@
       <nav class="nav-links" id="nav-menu" aria-label="Navegación principal">
         <a href="#biografia">Biografía</a>
         <a href="#galeria">Galería</a>
+        <a href="#video">Video</a>
         <a href="#propuestas">Propuestas</a>
         <a href="#valores">Valores</a>
         <a href="#sumate">Súmate</a>
@@ -898,6 +914,20 @@
         <figure class="gallery-item wide reveal" data-caption="Compromiso con Alto Selva Alegre">
           <img src="imagen7.jpeg" alt="Domingo Suclle Aragón en actividad de campaña">
         </figure>
+      </div>
+    </section>
+
+    <section class="container" id="video">
+      <header class="section-head reveal">
+        <span class="eyebrow">Videopresentación</span>
+        <h2>Conócelo en video</h2>
+        <p>Mira y escucha de voz propia el mensaje de Domingo Suclle Aragón para Alto Selva Alegre.</p>
+      </header>
+      <div class="video-wrap reveal">
+        <video controls preload="metadata" aria-label="Videopresentación de Domingo Suclle Aragón, candidato a la Alcaldía de Alto Selva Alegre">
+          <source src="videopresentacion.mp4" type="video/mp4">
+          Tu navegador no soporta la reproducción de video.
+        </video>
       </div>
     </section>
 
