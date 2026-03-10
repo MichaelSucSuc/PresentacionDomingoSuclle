@@ -775,9 +775,62 @@
         transform: none;
       }
     }
+
+    /* ── Intro overlay ── */
+    #intro-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.6s ease;
+    }
+
+    #intro-overlay.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    #intro-overlay video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      max-width: none;
+    }
+
+    #intro-skip {
+      position: absolute;
+      bottom: 2rem;
+      right: 2rem;
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      padding: 0.5rem 1.4rem;
+      border-radius: 999px;
+      font-family: inherit;
+      font-size: 1rem;
+      cursor: pointer;
+      backdrop-filter: blur(4px);
+      transition: background 0.2s;
+    }
+
+    #intro-skip:hover,
+    #intro-skip:focus-visible {
+      background: rgba(255, 255, 255, 0.3);
+      outline: 2px solid #fff;
+    }
   </style>
 </head>
 <body>
+  <div id="intro-overlay" role="dialog" aria-modal="true" aria-label="Video introductorio">
+    <video id="intro-video" playsinline preload="auto" muted title="Video introductorio de Domingo Suclle Aragón">
+      <source src="videoinicial.mp4" type="video/mp4">
+    </video>
+    <button id="intro-skip" aria-label="Saltar video de introducción">Saltar ▶</button>
+  </div>
+
   <header class="site-header">
     <div class="container nav">
       <a href="#inicio" class="brand" aria-label="Ir al inicio">
@@ -1014,6 +1067,26 @@
   </footer>
 
   <script>
+    // Intro video overlay
+    (function () {
+      var overlay = document.getElementById('intro-overlay');
+      var video   = document.getElementById('intro-video');
+      var skip    = document.getElementById('intro-skip');
+      var FADE_MS = 600; // must match CSS transition duration on #intro-overlay
+
+      function dismiss() {
+        overlay.classList.add('hidden');
+        video.pause();
+        setTimeout(function () { overlay.remove(); }, FADE_MS);
+      }
+
+      video.addEventListener('ended', dismiss);
+      skip.addEventListener('click', dismiss);
+
+      // Start playback via JS to get the Promise and detect if autoplay is blocked
+      video.play().catch(function () { dismiss(); });
+    })();
+
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.getElementById('nav-menu');
 
