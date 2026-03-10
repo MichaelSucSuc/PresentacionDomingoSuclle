@@ -840,6 +840,40 @@
       outline: none;
     }
 
+    .video-modal-unmute {
+      position: absolute;
+      bottom: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      background: rgba(0, 0, 0, 0.72);
+      border: 2px solid rgba(255, 255, 255, 0.85);
+      color: #fff;
+      border-radius: 999px;
+      padding: 0.5rem 1.3rem;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      cursor: pointer;
+      font-size: 0.95rem;
+      font-family: inherit;
+      font-weight: 600;
+      white-space: nowrap;
+      transition: background-color 0.2s ease, transform 0.15s ease;
+    }
+
+    .video-modal-unmute:hover,
+    .video-modal-unmute:focus-visible {
+      background: var(--asa-red);
+      border-color: var(--asa-red);
+      transform: translateX(-50%) scale(1.06);
+      outline: none;
+    }
+
+    .video-modal-unmute.hidden {
+      display: none;
+    }
+
     @media (max-width: 480px) {
       .video-modal-close {
         width: 2rem;
@@ -854,10 +888,11 @@
   <div class="video-modal-overlay" id="videoModalOverlay" role="dialog" aria-modal="true" aria-label="Video de presentación">
     <div class="video-modal">
       <button class="video-modal-close" id="videoModalClose" aria-label="Cerrar video">&#x2715;</button>
-      <video id="videoModalPlayer" preload="auto" playsinline>
+      <video id="videoModalPlayer" preload="auto" playsinline autoplay>
         <source src="videoinicial.mp4" type="video/mp4">
         Tu navegador no soporta la reproducción de video.
       </video>
+      <button class="video-modal-unmute hidden" id="videoModalUnmute" aria-label="Activar sonido"><span aria-hidden="true">&#x1F50A;</span> Activar sonido</button>
     </div>
   </div>
 
@@ -1137,6 +1172,7 @@
       const overlay = document.getElementById('videoModalOverlay');
       const closeBtn = document.getElementById('videoModalClose');
       const player = document.getElementById('videoModalPlayer');
+      const unmuteBtn = document.getElementById('videoModalUnmute');
 
       function closeModal() {
         overlay.classList.add('modal-hidden');
@@ -1156,10 +1192,20 @@
         if (e.key === 'Escape' && !overlay.classList.contains('modal-hidden')) closeModal();
       });
 
-      // Attempt autoplay with audio; if blocked, mute and retry
+      // Unmute button: activates audio after user interaction
+      unmuteBtn.addEventListener('click', function () {
+        player.muted = false;
+        player.volume = 1;
+        unmuteBtn.classList.add('hidden');
+      });
+
+      // Attempt autoplay with audio; if blocked, mute, play, and show unmute prompt
+      player.muted = false;
       player.play().catch(function () {
         player.muted = true;
-        player.play().catch(function () {});
+        player.play().then(function () {
+          unmuteBtn.classList.remove('hidden');
+        }).catch(function () {});
       });
     }());
   </script>
